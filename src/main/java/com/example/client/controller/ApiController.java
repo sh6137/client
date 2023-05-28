@@ -1,5 +1,6 @@
 package com.example.client.controller;
 
+import com.example.client.dto.Req;
 import com.example.client.dto.UserResponse;
 import com.example.client.service.RestTemplateService;
 import lombok.NoArgsConstructor;
@@ -24,5 +25,14 @@ public class ApiController {
     @PostMapping("/hello2")
     public UserResponse hello2(){
         return restTemplateService.post();
+    }
+    @PostMapping("/hello3")
+    public UserResponse exchange(){
+        return restTemplateService.exchange();
+    }
+
+    @PostMapping("/hello4")
+    public Req<UserResponse> genericExchange(){
+        return restTemplateService.genericExchange();
     }
 }
